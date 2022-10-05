@@ -125,3 +125,5 @@ classes, then it will sum the expected daily cost of the 3 classes
 according to their proportion and pick the q that results in the lowest
 sum.
 
+### Results
+
