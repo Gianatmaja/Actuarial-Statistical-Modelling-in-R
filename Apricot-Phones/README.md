@@ -4,14 +4,14 @@
 A phone manufacturer, Apricot, has 3 class of products, low, medium, and high class phones, and is planning to offer lifetime warranties for its customers. 
 For each class of phone, a replacement will be issued when a phone experiences a fault and can't be repaired on the same day. Further, a replacement will 
 also be given if a phone reaches a certain number of faults (2 for low class, and 3 for middle & high class). Given the probabilities and costs associated 
-to faults, same-day repairs, and replacements, how can the phone company optimise its warranty scheme to minimise costs?
+to faults, same-day repairs, and replacements, how can the phone company optimise its warranty scheme to minimise costs? More specifically, what proportion of the faults should the company plan accomodate for same day repairs?
 
 ### Assumptions
 
 1. The probability of having a fault in any day is denoted by p. There is no chance of having more than 1 fault in a day.
 2. A phone brought into a store will first be checked. Assuming that phone has had its i<sup>th</sup> fault (i = 0,1,2..., n-1), the probability
     of it being repaired in the same day is q<sup>i+1</sup>. Otherwise, it will be immediately replaced with a replacement of the same quality and
-    warranty as a new phone.
+    warranty as a new phone. Currently, q = 0.8
 3. If a phone has its n<sup>th</sup> fault, then it is directly replaced.
 4. The replacement cost is denoted £ R, while cost of repair for the i<sup>th</sup> fault is equal to £ (2<sup>i</sup>·q·100).
 5. For each class,
@@ -103,18 +103,16 @@ repaired (denote this by c<sub>3</sub>).
 
 Hence, we can see that the expected daily cost would be:
 
-c~1~\*R + c~2~\*(200q) + c~3~\*(400q)
+![Eq1](https://github.com/Gianatmaja/Actuarial-Statistical-Modelling-in-R/blob/main/Apricot-Phones/Images/Screenshot%202022-10-05%20at%2011.19.33%20AM.png)
 
 which, if we substitute c1, c2, and c3, with p and q, becomes:
 
-\[p(1-q)π~0~ + p(1-q^2^)π~1~ + pπ~2~\]\*R + pqπ~0~\*(200q) +
-pq^2^π~1~\*(400q)
+![Eq2](https://github.com/Gianatmaja/Actuarial-Statistical-Modelling-in-R/blob/main/Apricot-Phones/Images/Screenshot%202022-10-05%20at%2011.19.40%20AM.png)
 
 Using the same logic, the expected daily cost for medium and
 high-quality phones would be given by:
 
-\[p(1-q)π~0~ + p(1-q^2^)π~1~ + p(1-q^3^)π~2~ + pπ~3~\]\*R +
-pqπ~0~\*(200q) + pq^2^π~1~\*(400q) + pq^3^π~2~\*(800q)
+![Eq3](https://github.com/Gianatmaja/Actuarial-Statistical-Modelling-in-R/blob/main/Apricot-Phones/Images/Screenshot%202022-10-05%20at%2011.19.51%20AM.png)
 
 Where π = (π<sub>0</sub>, π<sub>1</sub>, π<sub>2</sub>) represents the stationary
 distribution.
