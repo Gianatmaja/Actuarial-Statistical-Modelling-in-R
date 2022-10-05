@@ -69,7 +69,7 @@ To illustrate this,
 For the low-quality phones, consider π to be the stationary
 distribution. Then
 
-π = (π<inf>0</inf>, π<inf>1</inf>, π<inf>2</inf>)
+π = (π<sub>0</sub>, π<inf>1</inf>, π<inf>2</inf>)
 
 represents the daily proportion of phones in each state over the long
 run. (π~0~ + π~1~ + π~2~ = 1)
