@@ -10,10 +10,10 @@ to faults, same-day repairs, and replacements, how can the phone company optimis
 
 1. The probability of having a fault in any day is denoted by p. There is no chance of having more than 1 fault in a day.
 2. A phone brought into a store will first be checked. Assuming that phone has had its i<sup>th</sup> fault (i = 0,1,2..., n-1), the probability
-    of it being repaired in the same day is q^i+1^. Otherwise, it will be immediately replaced with a replacement of the same quality and
+    of it being repaired in the same day is q<sup>i+1</sup>. Otherwise, it will be immediately replaced with a replacement of the same quality and
     warranty as a new phone.
-3. If a phone has its n^th^ fault, then it is directly replaced.
-4. The replacement cost is denoted £ R, while cost of repair for the i^th^ fault is equal to £ (2^i^·q·100).
+3. If a phone has its n<sup>th</sup> fault, then it is directly replaced.
+4. The replacement cost is denoted £ R, while cost of repair for the i<sup>th</sup> fault is equal to £ (2<sup>i</sup>·q·100).
 5. For each class,
 - Low (25% of products): n = 3, R = 410, p = 0.0005
 - Medium (52% of products): n = 4, R = 850, p = 0.0002
@@ -24,7 +24,7 @@ to faults, same-day repairs, and replacements, how can the phone company optimis
 The method of modelling used in this analysis utilizes Markov chain. Let
 each state number represent the number of faults a phone has recorded.
 Based on the stated assumptions, a phone can only be either in state 0,
-1, 2..., n-1 as it is replaced as soon as it has its n^th^ fault.
+1, 2..., n-1 as it is replaced as soon as it has its n<sup>th</sup> fault.
 
 The probabilities of going from one state to another are shown by a
 transition matrix. For a phone, its current state in the Markov chain
