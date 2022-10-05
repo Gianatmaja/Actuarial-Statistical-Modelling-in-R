@@ -126,4 +126,15 @@ according to their proportion and pick the q that results in the lowest
 sum.
 
 ### Results
+![staionery](https://github.com/Gianatmaja/Actuarial-Statistical-Modelling-in-R/blob/main/Apricot-Phones/Images/Screenshot%202022-10-05%20at%204.36.00%20PM.png)
 
+Under the current q (at 0.8), it can be seen that in the long run, 
+- 45%, 40%, and 15% of low-class phone users possess 0, 1, and 2 faults, respectively.
+- 47%, 32%, 15%, and 6% of medium-class phone users possess 0, 1, 2, and 3 faults, respectively.
+- 50%, 34%, 12%, and 4% of high-class phone users possess 0, 1, 2, and 3 faults, respectively.
+
+![optimal q](https://github.com/Gianatmaja/Actuarial-Statistical-Modelling-in-R/blob/main/Apricot-Phones/Images/Screenshot%202022-10-05%20at%204.36.09%20PM.png)
+Further, it can be seen that the optimal q is 0.64, 0.86, and 0.96 for low, medium, and high class phones. This means that Apricot should improve its maintenance so that it can accommodate more same-day repairs for medium and high-class phones.
+
+![one q](https://github.com/Gianatmaja/Actuarial-Statistical-Modelling-in-R/blob/main/Apricot-Phones/Images/Screenshot%202022-10-05%20at%204.37.29%20PM.png)
+Finally, if only one q value is allowed for all 3 classes of phones, Apricot should aim for q = 0.82.
