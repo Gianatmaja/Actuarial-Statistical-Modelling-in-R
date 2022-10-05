@@ -8,27 +8,16 @@ to faults, same-day repairs, and replacements, how can the phone company optimis
 
 ### Assumptions
 
--   The probability of having a fault in any day is denoted by p. There
-    is no chance of having more than 1 fault in a day.
-
--   A phone brought into a store will first be checked. Assuming that
-    phone has had its i^th^ fault (i = 0,1,2..., n-1), the probability
-    of it being repaired in the same day is q^i+1^. Otherwise, it will
-    be immediately replaced with a replacement of the same quality and
+1. The probability of having a fault in any day is denoted by p. There is no chance of having more than 1 fault in a day.
+2. A phone brought into a store will first be checked. Assuming that phone has had its i^th^ fault (i = 0,1,2..., n-1), the probability
+    of it being repaired in the same day is q^i+1^. Otherwise, it will be immediately replaced with a replacement of the same quality and
     warranty as a new phone.
-
--   If a phone has its n^th^ fault, then it is directly replaced.
-
--   The replacement cost is denoted £ R, while cost of repair for the
-    i^th^ fault is equal to £ (2^i^·q·100).
-
--   For each class,
-
-1.  Low (25% of products): n = 3, R = 410, p = 0.0005
-
-2.  Medium (52% of products): n = 4, R = 850, p = 0.0002
-
-3.  High (23% of products): n = 4, R = 910, p = 0.0001
+3. If a phone has its n^th^ fault, then it is directly replaced.
+4. The replacement cost is denoted £ R, while cost of repair for the i^th^ fault is equal to £ (2^i^·q·100).
+5. For each class,
+- Low (25% of products): n = 3, R = 410, p = 0.0005
+- Medium (52% of products): n = 4, R = 850, p = 0.0002
+- High (23% of products): n = 4, R = 910, p = 0.0001
 
 **Model Explanation:**
 
