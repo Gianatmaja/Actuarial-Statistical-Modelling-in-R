@@ -15,9 +15,9 @@ to faults, same-day repairs, and replacements, how can the phone company optimis
 3. If a phone has its n<sup>th</sup> fault, then it is directly replaced.
 4. The replacement cost is denoted £ R, while cost of repair for the i<sup>th</sup> fault is equal to £ (2<sup>i</sup>·q·100).
 5. For each class,
-- Low (25% of products): n = 3, R = 410, p = 0.0005
-- Medium (52% of products): n = 4, R = 850, p = 0.0002
-- High (23% of products): n = 4, R = 910, p = 0.0001
+    - Low (25% of products): n = 3, R = 410, p = 0.0005
+    - Medium (52% of products): n = 4, R = 850, p = 0.0002
+    - High (23% of products): n = 4, R = 910, p = 0.0001
 
 ### Model Explanation
 
