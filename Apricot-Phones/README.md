@@ -19,7 +19,7 @@ to faults, same-day repairs, and replacements, how can the phone company optimis
 - Medium (52% of products): n = 4, R = 850, p = 0.0002
 - High (23% of products): n = 4, R = 910, p = 0.0001
 
-**Model Explanation:**
+### Model Explanation
 
 The method of modelling used in this analysis utilizes Markov chain. Let
 each state number represent the number of faults a phone has recorded.
