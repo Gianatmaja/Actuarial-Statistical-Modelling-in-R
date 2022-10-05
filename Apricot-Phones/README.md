@@ -69,10 +69,10 @@ To illustrate this,
 For the low-quality phones, consider π to be the stationary
 distribution. Then
 
-π = (π<sub>0</sub>, π<inf>1</inf>, π<inf>2</inf>)
+π = (π<sub>0</sub>, π<sub>1</sub>, π<sub>2</sub>)
 
 represents the daily proportion of phones in each state over the long
-run. (π~0~ + π~1~ + π~2~ = 1)
+run. (π<sub>0</sub> + π<sub>1</sub> + π<sub>2</sub> = 1)
 
 To add to the daily cost, a phone would have to be either repaired or
 replaced. We then extract the probabilities of the following events from
@@ -91,15 +91,15 @@ the transition matrix.
 -   A phone with two initial faults gets another one. This phone will
     immediately be replaced.
 
-Next, the model multiplies the 2^nd^,4^th^, and 5^th^ point with π~0~,
-π~1~, and π~2~, respectively. Summing these will result in the
-proportion of phone that needs to be replaced. Denote this by c~1~.
+Next, the model multiplies the 2<sup>nd</sup>,4<sup>th</sup>, and 5<sup>th</sup> point with π<sub>0</sub>,
+π<sub>1</sub>, and π<sub>2</sub>, respectively. Summing these will result in the
+proportion of phone that needs to be replaced. Denote this by c<sub>1</sub>.
 
-Then, it multiplies the 1^st^ point with π~0~ and the 3^rd^ point with
-π~1~. The former will give the proportion of phones that needs to have
-its first fault repaired (denote this by c~2~), while the latter will
+Then, it multiplies the 1<sup>st</sup> point with π<sub>0</sub> and the 3<sup>rd</sup> point with
+π<sub>1</sub>. The former will give the proportion of phones that needs to have
+its first fault repaired (denote this by c<sub>2</sub>), while the latter will
 give the proportion of phones that needs to have its second fault
-repaired (denote this by c~3~).
+repaired (denote this by c<sub>3</sub>).
 
 Hence, we can see that the expected daily cost would be:
 
@@ -116,7 +116,7 @@ high-quality phones would be given by:
 \[p(1-q)π~0~ + p(1-q^2^)π~1~ + p(1-q^3^)π~2~ + pπ~3~\]\*R +
 pqπ~0~\*(200q) + pq^2^π~1~\*(400q) + pq^3^π~2~\*(800q)
 
-Where π = (π~0~, π~1~, π~2~, π~3~) represents the stationary
+Where π = (π<sub>0</sub>, π<sub>1</sub>, π<sub>2</sub>) represents the stationary
 distribution.
 
 For each class and each value of q, the model will compute the expected
