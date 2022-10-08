@@ -72,3 +72,102 @@ the exact prior distribution for p to be Beta(0.4, 0.6).
 Finally, for $\psi$, we will use a $\Gamma(0.01,\ 0.01)$ prior. This
 prior will have a mean of 1 and a variance of 100. Similar to the case
 of $\alpha$ and $\gamma$, this is a vague prior.
+
+### Posterior Function
+We first assume that $$ was observed (we will use data augmentation to
+explore it later). Thus, the joint posterior can now be written as
+follows:
+
+$$\pi(p,\alpha,\gamma,\ \psi\ |\ ,) \propto \ \pi(p)\pi(\alpha)\pi(\gamma)\pi(\psi)p^{n_{I}(d)}(1 - p)^{n_{O}(d)}\psi^{\frac{n}{2}}e^{- \frac{\psi}{2}\sum_{i = 1}^{n_{I}(d)}\left( y_{i} - \alpha - \gamma \right)^{2}}e^{- \frac{\psi}{2}\sum_{i = 1}^{n_{O}(d)}\left( y_{i} - \alpha \right)^{2}}$$
+
+where: $\pi(p) \propto p^{- 0.6}(1 - p)^{- 0.4}$
+
+$\pi(\alpha) \propto e^{- \frac{\alpha^{2}}{200}}\ $
+
+$\pi(\gamma) \propto \ e^{- \frac{\gamma^{2}}{200}}$
+
+$\pi(\psi) \propto \psi^{- 0.99}e^{- 0.01\psi}$
+
+Hence, we have:
+
+$\pi(p,\alpha,\gamma,\ \psi\ |\ ,) \propto p^{n_{I}(d) - 0.6}(1 - p)^{n_{O}(d) - 0.4}\ \psi^{\frac{n}{2}\  - 0.99}e^{- \ \frac{\psi}{2}\sum_{i = 1}^{n_{I}(d)}\left( y_{i} - \alpha - \gamma \right)^{2}}e^{- \ \frac{\psi}{2}\sum_{i = 1}^{n_{O}(d)}\left( y_{i} - \alpha \right)^{2}}e^{- 0.01\psi}e^{- \ \frac{\alpha^{2}}{200}}\ e^{- \ \frac{\gamma^{2}}{200}}$
+
+We can now find the conditional posterior for each parameter by
+extracting only the factors that depend on each parameter.
+
+$\pi(p|\ \alpha,\ \gamma,\ \psi\ ,) \propto \ p^{n_{I}(d) - 0.6}(1 - p)^{n_{O}(d) - 0.4}$
+
+$\pi(\alpha|\ p,\ \gamma,\ \psi\ ,) \propto e^{- \ \frac{\psi}{2}\sum_{i = 1}^{n_{I}(d)}{\left( y_{i} - \alpha - \gamma \right)^{2}\  - \ \ \frac{\psi}{2}\sum_{i = 1}^{n_{O}(d)}{\left( y_{i} - \alpha \right)^{2}\  - \ \frac{\alpha^{2}}{200}}}}$
+(i)
+
+$\pi(\gamma|\ p,\ \alpha,\ \psi,\ ,) \propto e^{- \ \frac{\psi}{2}\sum_{i = 1}^{n_{I}(d)}{\left( y_{i} - \alpha - \gamma \right)^{2}\  - \ \ \frac{\gamma^{2}}{200}}}$
+(ii)
+
+$\pi(\psi|\ p,\ \alpha,\ \gamma,\ ,) \propto \ \psi^{\frac{n}{2}\  - \ 0.99}e^{- \psi\lbrack\ \frac{1}{2}\sum_{i = 1}^{n_{I}(d)}{\left( y_{i} - \alpha - \gamma \right)^{2}\  + \ \frac{1}{2}\sum_{i = 1}^{n_{O}(d)}{\left( y_{i} - \alpha \right)^{2}\  + \ 0.01\rbrack\ \ }}}$
+
+Since we actually don't have the values for $$ , we treat it as an
+additional parameter to explore and its conditional posterior is as
+follows.
+
+$$\pi(|\ p,\ \alpha,\ \gamma,\ \psi,) \propto \prod_{i = 1}^{n}{\left( pf_{I}\left( y_{i} \right) \right)^{I\left( d_{i} = 1 \right)}\left( (1 - p)f_{O}\left( y_{i} \right) \right)^{I\left( d_{i} = 0 \right)}} \propto \prod_{i = 1}^{n}{\pi\left( d_{i} \right|\ p,\ \alpha,\ \gamma,\ \psi,y_{i})}$$
+
+where
+$\pi\left( d_{i} \right|\ p,\ \alpha,\ \gamma,\ \psi,y_{i}) = \frac{pf_{I}\left( y_{i} \right)}{pf_{I}\left( y_{i} \right)\  + \ (1 - p)f_{O}\left( y_{i} \right)}$
+when $d_{i} = 1$ and
+$\text{\ π}\left( d_{i} \right|\ p,\ \alpha,\ \gamma,\ \psi,y_{i}) =$
+
+$\frac{(1 - p)f_{O}\left( y_{i} \right)}{pf_{I}\left( y_{i} \right)\  + \ (1 - p)f_{O}\left( y_{i} \right)}$
+when $d_{i} = 0$, with $f_{I}\left( y_{i} \right)$ and $f_{O}(y_{i})$
+defined earlier in question 2. Next, we
+
+observe that the conditional posteriors of $p$ and $\psi$ follow the
+following distributions:
+
+$(p|\ \alpha,\ \gamma,\ \psi\ ,)\sim Beta\left( n_{I}(d) + 0.4\ ,\ n_{O}(d) + 0.6 \right)$
+(iii)
+
+$(\psi|\ p,\ \alpha,\ \gamma,\ ,)\sim\Gamma(\frac{n}{2} + 0.01\ ,\ \frac{1}{2}\sum_{i = 1}^{n_{I}(d)}{\left( y_{i} - \alpha - \gamma \right)^{2} + \frac{1}{2}\sum_{i = 1}^{n_{O}(d)}{\left( y_{i} - \alpha \right)^{2} + 0.01)\ \ }}$
+(iv)
+
+The conditional posterior of $\alpha$ and $\gamma$ don't seem to follow
+any standard distribution. So, to sample from them, we can use the
+Metropolis-Hastings algorithm. The full algorithm works as follows:
+
+1)  Set initial values for
+    $p,\ \alpha,\ \gamma,\ \psi\ \text{\ \ }$(will be discussed in
+    question 5) as well as for $\mathrm{\Delta}_{\alpha}$ and
+    $\mathrm{\Delta}_{\gamma}$.
+
+2)  Draw a sample for $p$ and $\psi$ from the distributions in (iii) and
+    (iv), respectively. These are Gibbs steps.
+
+3)  For each j^th^ iteration, propose a new value for $\alpha$ from a
+    U($\alpha_{j - 1} - \mathrm{\Delta}_{\alpha}\ ,\ \alpha_{j - 1} + \mathrm{\Delta}_{\alpha})$.
+    Denote this value by $\alpha^{'}$. Compute the acceptance
+    probability
+    $P^{\text{Acc}} = \min\left( \frac{\pi\left( \alpha^{'} \right|\ p,\ \gamma,\ \psi\ ,)}{\pi\left( \alpha_{j - 1} \right|\ p,\ \gamma,\ \psi\ ,)}\ ,\ 1 \right)$.
+    The formula for $\pi(\alpha|\ p,\ \gamma,\ \psi\ ,)$ can be found in
+    (i). When calculating, use the updated values for $\psi$.
+
+4)  Generate a random number from U(0,1). If this number is less than or
+    equal to the $P^{\text{Acc}}$, set $\alpha_{j} = \alpha^{'}$ .
+    Otherwise set $\alpha_{j} = \alpha_{j - 1}$ .
+
+5)  Repeat steps 3 and 4 for sampling $\gamma_{j}$. Use updated values
+    of $\psi$ and $\alpha$ in the calculations. The conditional
+    posterior can be found in (ii). Steps 3-5 are M-H steps.
+
+6)  For each observation, calculate
+    $p_{i} = \frac{pf_{I}\left( y_{i} \right)}{pf_{I}\left( y_{i} \right)\  + \ (1 - p)f_{O}\left( y_{i} \right)}\ ,\ i = 1,2,\ldots,100$
+    using the updated values of each parameter.
+
+7)  Generate
+    $U_{1},\ U_{2},\ \ldots,\ U_{100}\text{\ where\ }U_{i}\sim U(0\ ,\ 1)\text{\ i.i.d}$.
+    For each observation, if $U_{i} \leq p_{i}$, set $d_{i} = 1$.
+    Otherwise set $d_{i} = 0$.
+
+8)  Repeat steps 2-7 for a large number of iterations (in our case, 20
+    000). Analyze chain and distribution for each parameter, then apply
+    thinning and parameters ($\mathrm{\Delta}_{\alpha}$,
+    $\mathrm{\Delta}_{\gamma}$, number of iterations, burn-in, etc.)
+    tuning where necessary.
