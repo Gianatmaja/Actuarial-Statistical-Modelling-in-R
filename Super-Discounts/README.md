@@ -142,7 +142,7 @@ Metropolis-Hastings algorithm. The full algorithm works as follows:
     (iv), respectively. These are Gibbs steps.
 
 3)  For each j<sup>th</sup> iteration, propose a new value for $\alpha$ from a
-    U($\alpha_{j - 1} - \mathrm{\Delta}_{\alpha}\ ,\ \alpha_{j - 1} + \mathrm{\Delta}_{\alpha})$.
+    U($\alpha_{j - 1} - \mathrm{\Delta}_{\alpha}\ ,\ \alpha_{j - 1} + \mathrm{\Delta}_{\alpha}$).
     Denote this value by $\alpha^{'}$. Compute the acceptance
     probability
     $P^{\text{Acc}} = \min\left( \frac{\pi\left( \alpha^{'} \right|\ p,\ \gamma,\ \psi\ ,)}{\pi\left( \alpha_{j - 1} \right|\ p,\ \gamma,\ \psi\ ,)}\ ,\ 1 \right)$.
