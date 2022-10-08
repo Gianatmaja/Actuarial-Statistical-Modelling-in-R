@@ -10,3 +10,38 @@ We observe that there seems to be 2 separate normal distributions here, with the
 that the latter is when super discounts are present as this complies with the given information that super discounts occur around 40% of the time. In the
 sample data, cases when $\ y > 11$ accounts for 45% of all observations in our data, which is close to the departmental store's belief at 40%. Second, 
 both cases seem to follow a normal distribution.
+
+### Likelihood Function
+We have
+$y_{i}\sim N\left( \alpha + \gamma d_{i}\ ,\ \psi \right)\ ;\ i = 1,2,\ldots,n$
+where $\psi$ denotes the precision (i.e., $\frac{1}{\sigma^{2}}$). To
+derive the likelihood of our observed data, we first consider each
+observation to be a random draw from the following mixture distribution:
+
+$$g\left( y_{i};p,\alpha,\gamma,\ \psi \right) = pf_{I}(y_{i}) + (1 - p)f_{O}(y_{i})$$
+
+where
+$f_{I}(y_{i}) = \sqrt{\frac{\psi}{2\pi}}e^{- \frac{1}{2}\psi\left( y_{i} - \alpha - \gamma \right)^{2}}$
+i.e., the density for earnings on super discount days, and
+
+$f_{O}(y_{i}) = \ \sqrt{\frac{\psi}{2\pi}}e^{- \frac{1}{2}\psi\left( y_{i} - \alpha \right)^{2}}$
+i.e., the density for earnings on days without super discounts. Thus, in
+the absence of $$ , the likelihood of our observed data is: 
+$$L = \prod_{i = 1}^{n}{g\left( y_{i};p,\alpha,\gamma,\ \psi \right)}$$
+
+In the presence of $$ , our likelihood becomes:
+
+$$L = \prod_{i = 1}^{n}{\left( pf_{I}\left( y_{i} \right) \right)^{I\left( d_{i} = 1 \right)}\left( (1 - p)f_{O}\left( y_{i} \right) \right)^{I\left( d_{i} = 0 \right)}}$$
+
+$$\ \ \  = p^{n_{I}(d)}(1 - p)^{n_{O}(d)}\prod_{i = 1}^{n_{I}(d)}{f_{I}\left( y_{i} \right)}\prod_{i = 1}^{n_{O}(d)}{f_{O}\left( y_{i} \right)}$$
+
+where $n_{I}(d)$ and $n_{O}(d)$ denote the number of observations with
+and without super discounts, respectively.
+
+Substituting the formula for $f_{I}(y_{i})$ and $f_{O}(y_{i})$ into the
+equation and simplifying the equation, the complete likelihood (in the
+presence of $$) becomes:
+
+$$L(,;p,\alpha,\gamma,\ \psi)\ \  \propto \ \text{\ p}^{n_{I}(d)} \bullet (1 - p)^{n_{O}(d)} \bullet \psi^{\frac{n}{2}}{\bullet e}^{- \frac{\psi}{2}\sum_{i = 1}^{n_{I}(d)}\left( y_{i} - \alpha - \gamma \right)^{2}}{\bullet e}^{- \frac{\psi}{2}\sum_{i = 1}^{n_{O}(d)}\left( y_{i} - \alpha \right)^{2}}$$
+
+where $n = n_{I}(d) + n_{O}(d)$.
