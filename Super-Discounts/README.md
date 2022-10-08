@@ -141,7 +141,7 @@ Metropolis-Hastings algorithm. The full algorithm works as follows:
 2)  Draw a sample for $p$ and $\psi$ from the distributions in (iii) and
     (iv), respectively. These are Gibbs steps.
 
-3)  For each j^th^ iteration, propose a new value for $\alpha$ from a
+3)  For each j<sup>th</sup> iteration, propose a new value for $\alpha$ from a
     U($\alpha_{j - 1} - \mathrm{\Delta}_{\alpha}\ ,\ \alpha_{j - 1} + \mathrm{\Delta}_{\alpha})$.
     Denote this value by $\alpha^{'}$. Compute the acceptance
     probability
