@@ -64,8 +64,8 @@ exact distribution, we solve the following equations.
 
 $\frac{\alpha_{1}}{\alpha_{1} + \alpha_{2}} = 0.4\ \ \ \ and\ \ \ \ \ \frac{\alpha_{1}\alpha_{2}}{\left( \alpha_{1} + \alpha_{2} \right)^{2}(\alpha_{1} + \alpha_{2} + 1)} = \frac{0.4\alpha_{2}}{(\alpha_{1} + \alpha_{2})(\alpha_{1} + \alpha_{2} + 1)} = 0.12$
 
-The 1^st^ equation tells us that $\alpha_{1} = \frac{2}{3}\alpha_{2\ }$.
-Substituting this to the 2^nd^ equation allows us to find the value of
+The 1<sup>st</sup> equation tells us that $\alpha_{1} = \frac{2}{3}\alpha_{2\ }$.
+Substituting this to the 2<sup>nd</sup> equation allows us to find the value of
 $\alpha_{2}$, which we can use to find $\alpha_{1}$. Doing that, we find
 the exact prior distribution for p to be Beta(0.4, 0.6).
 
