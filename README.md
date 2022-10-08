@@ -9,6 +9,6 @@ A phone manufacturer, Apricot, has 3 class of products, low, medium, and high cl
 
 
 ### Bayesian Analysis of Super Discounts
-A retailer, wishes to estimate the effects of super discounts, which occur on around 40% of the time, on their earnings. Given a sample of 100 data points, showing the daily sales for 100 days (with and without super discount), we will perform a Baysesian analysis to find out if super discounts increase sales. 
+A retailer, wishes to estimate the effects of super discounts, which occur on around 40% of the time, on their earnings. Given a sample of 100 data points, showing the daily sales (assumed to be normally distributed) for 100 days (with and without super discount), we will perform a Baysesian analysis to find out if super discounts increase sales.
 
 [Go to repo](https://github.com/Gianatmaja/Actuarial-Statistical-Modelling-in-R/tree/main/Super-Discounts)
