@@ -45,3 +45,30 @@ presence of $$) becomes:
 $$L(,;p,\alpha,\gamma,\ \psi)\ \  \propto \ \text{\ p}^{n_{I}(d)} \bullet (1 - p)^{n_{O}(d)} \bullet \psi^{\frac{n}{2}}{\bullet e}^{- \frac{\psi}{2}\sum_{i = 1}^{n_{I}(d)}\left( y_{i} - \alpha - \gamma \right)^{2}}{\bullet e}^{- \frac{\psi}{2}\sum_{i = 1}^{n_{O}(d)}\left( y_{i} - \alpha \right)^{2}}$$
 
 where $n = n_{I}(d) + n_{O}(d)$.
+
+### Priors
+We now choose our priors. First, for $\alpha$ and $\gamma$, we use a
+N(0, 100) distribution as our prior. We choose this prior specification
+because before seeing the data, we have very little knowledge on the
+location of the regression parameters. So, we choose a prior with a
+large variance. The choice of the mean will not have much importance
+here. Since it is a vague prior, it will have little impact on the
+posterior.
+
+Next, for p, we choose a Beta distribution with a mean of 0.4 and a
+variance of 0.12 as our prior. The choice of the mean was to comply with
+the given information that super discount occurs on around 40% of the
+days. Furthermore, the conjugacy property of a Beta prior on a binomial
+likelihood will also make the inference on p more convenient. To get the
+exact distribution, we solve the following equations.
+
+$\frac{\alpha_{1}}{\alpha_{1} + \alpha_{2}} = 0.4\ \ \ \ and\ \ \ \ \ \frac{\alpha_{1}\alpha_{2}}{\left( \alpha_{1} + \alpha_{2} \right)^{2}(\alpha_{1} + \alpha_{2} + 1)} = \frac{0.4\alpha_{2}}{(\alpha_{1} + \alpha_{2})(\alpha_{1} + \alpha_{2} + 1)} = 0.12$
+
+The 1^st^ equation tells us that $\alpha_{1} = \frac{2}{3}\alpha_{2\ }$.
+Substituting this to the 2^nd^ equation allows us to find the value of
+$\alpha_{2}$, which we can use to find $\alpha_{1}$. Doing that, we find
+the exact prior distribution for p to be Beta(0.4, 0.6).
+
+Finally, for $\psi$, we will use a $\Gamma(0.01,\ 0.01)$ prior. This
+prior will have a mean of 1 and a variance of 100. Similar to the case
+of $\alpha$ and $\gamma$, this is a vague prior.
