@@ -1,1 +1,1 @@
-# Super
+# Bayesian Analysis of Super Discounts
