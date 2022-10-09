@@ -181,5 +181,4 @@ All chains converged to similar values as in the first trial. Hence, we conclude
 We conclude that super discounts occur on around 45% of all days, and on average, brings in an extra $20 263. Without super discounts, daily sales have a mean of $99 844. With super discounts, they have a mean of $120 107. We estimate the standard deviation of the earnings 
 in both cases to be $4 799.
 
-
-
+![conclude](https://github.com/Gianatmaja/Actuarial-Statistical-Modelling-in-R/tree/main/Super-Discounts/Image)
