@@ -139,18 +139,13 @@ Metropolis-Hastings algorithm. The full algorithm works as follows:
 
 We now implement the algorithm discussed in question 4. First, we choose
 the starting values for the parameters. For p, we set it to 0.4 to
-comply with the store's beliefs. For $\alpha$
-
-and $\gamma$, we choose 10 and 2 (as estimated in the EDA process in
-question 1). Finally, for $\psi$,
-
-we choose the value $\frac{1}{{0.45}^{2}} = 4.938$ . We obtain this
+comply with the store's beliefs. For $\alpha$ and $\gamma$, we choose 10 and 2 (as estimated in the EDA process in
+question 1). Finally, for $\psi$, we choose the value $\frac{1}{{0.45}^{2}} = 4.938$ . We obtain this
 value by first computing the confidence interval for population variance
 of a Normal distribution, for both the samples where $y \leq 11$ and
 $y > 11$. The 95% confidence interval is given by this formula:
 
-$95\%\ CI\ for\ \sigma^{2} = \left( \frac{(n - 1)s^{2}}{\chi_{n - 1,\ \ 1 - \frac{\alpha}{2}}^{2}}\ ,\ \frac{(n - 1)s^{2}}{\chi_{n - 1,\frac{\alpha}{2}}^{2}} \right)$
-
+![formula1](https://github.com/Gianatmaja/Actuarial-Statistical-Modelling-in-R/blob/main/Super-Discounts/Image/Screenshot%202022-10-09%20at%209.25.43%20PM.png)
 
 where n denotes the sample size, $s^{2}$ the sample variance, and
 $\chi_{n - 1}^{2}$ denotes a chi-square distribution with (n-1) degrees
@@ -161,7 +156,7 @@ that is present in both intervals, in our case, 0.45, and calculate
 $\psi_{1} = \frac{1}{{0.45}^{2}}$ . For $$, we initially set $d_{i} = 1$
 if $y_{i} > 11$ and $d_{i} = 0$ otherwise.
 
-Running the algorithm for 20000 iterations with $\mathrm{\Delta}_{a}$ and $\mathrm{\Delta}_{\gamma}$ at 0.25, we
+Running the algorithm for 20000 iterations with delta<sub>a</sub> and delta<sub>gamma</sub> at 0.25, we
 obtain the following trace plots.
 
 ![res1](https://github.com/Gianatmaja/Actuarial-Statistical-Modelling-in-R/blob/main/Super-Discounts/Image/Screenshot%202022-10-09%20at%209.10.00%20PM.png)
