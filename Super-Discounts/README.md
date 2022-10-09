@@ -133,41 +133,4 @@ The conditional posterior of $\alpha$ and $\gamma$ don't seem to follow
 any standard distribution. So, to sample from them, we can use the
 Metropolis-Hastings algorithm. The full algorithm works as follows:
 
-1)  Set initial values for
-    $p,\ \alpha,\ \gamma,\ \psi\ \text{\ \ }$(will be discussed in
-    question 5) as well as for $\mathrm{\Delta}_{\alpha}$ and
-    $\mathrm{\Delta}_{\gamma}$.
-
-2)  Draw a sample for $p$ and $\psi$ from the distributions in (iii) and
-    (iv), respectively. These are Gibbs steps.
-
-3)  For each j<sup>th</sup> iteration, propose a new value for $\alpha$ from a
-    U($\alpha_{j - 1} - \mathrm{\Delta}_{\alpha}\ ,\alpha_{j - 1} + \mathrm{\Delta}_{\alpha}$).
-    Denote this value by $\alpha^{'}$. Compute the acceptance
-    probability
-    $P^{\text{Acc}} = \min\left( \frac{\pi\left( \alpha^{'} \right|\ p,\ \gamma,\ \psi\ ,)}{\pi\left( \alpha_{j - 1} \right|\ p,\ \gamma,\ \psi\ ,)}\ ,\ 1 \right)$.
-    The formula for $\pi(\alpha|\ p,\ \gamma,\ \psi\ ,)$ can be found in
-    (i). When calculating, use the updated values for $\psi$.
-
-4)  Generate a random number from U(0,1). If this number is less than or
-    equal to the $P^{\text{Acc}}$, set $\alpha_{j} = \alpha^{'}$ .
-    Otherwise set $\alpha_{j} = \alpha_{j - 1}$ .
-
-5)  Repeat steps 3 and 4 for sampling $\gamma_{j}$. Use updated values
-    of $\psi$ and $\alpha$ in the calculations. The conditional
-    posterior can be found in (ii). Steps 3-5 are M-H steps.
-
-6)  For each observation, calculate
-    $p_{i} = \frac{pf_{I}\left( y_{i} \right)}{pf_{I}\left( y_{i} \right)\  + \ (1 - p)f_{O}\left( y_{i} \right)}\ ,\ i = 1,2,\ldots,100$
-    using the updated values of each parameter.
-
-7)  Generate
-    $U_{1},\ U_{2},\ \ldots,\ U_{100}\text{\ where\ }U_{i}\sim U(0\ ,\ 1)\text{\ i.i.d}$.
-    For each observation, if $U_{i} \leq p_{i}$, set $d_{i} = 1$.
-    Otherwise set $d_{i} = 0$.
-
-8)  Repeat steps 2-7 for a large number of iterations (in our case, 20
-    000). Analyze chain and distribution for each parameter, then apply
-    thinning and parameters ($\mathrm{\Delta}_{\alpha}$,
-    $\mathrm{\Delta}_{\gamma}$, number of iterations, burn-in, etc.)
-    tuning where necessary.
+![Steps](https://github.com/Gianatmaja/Actuarial-Statistical-Modelling-in-R/blob/main/Super-Discounts/Image/Screenshot%202022-10-09%20at%209.00.05%20PM.png)
