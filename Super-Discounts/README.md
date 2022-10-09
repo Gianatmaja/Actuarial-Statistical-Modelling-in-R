@@ -134,3 +134,57 @@ any standard distribution. So, to sample from them, we can use the
 Metropolis-Hastings algorithm. The full algorithm works as follows:
 
 ![Steps](https://github.com/Gianatmaja/Actuarial-Statistical-Modelling-in-R/blob/main/Super-Discounts/Image/Screenshot%202022-10-09%20at%209.00.05%20PM.png)
+
+### Results
+
+We now implement the algorithm discussed in question 4. First, we choose
+the starting values for the parameters. For p, we set it to 0.4 to
+comply with the store's beliefs. For $\alpha$
+
+and $\gamma$, we choose 10 and 2 (as estimated in the EDA process in
+question 1). Finally, for $\psi$,
+
+we choose the value $\frac{1}{{0.45}^{2}} = 4.938$ . We obtain this
+value by first computing the confidence interval for population variance
+of a Normal distribution, for both the samples where $y \leq 11$ and
+$y > 11$. The 95% confidence interval is given by this formula:
+
+$95\%\ CI\ for\ \sigma^{2} = \left( \frac{(n - 1)s^{2}}{\chi_{n - 1,\ \ 1 - \frac{\alpha}{2}}^{2}}\ ,\ \frac{(n - 1)s^{2}}{\chi_{n - 1,\frac{\alpha}{2}}^{2}} \right)$
+
+where n denotes the sample size, $s^{2}$ the sample variance, and
+$\chi_{n - 1}^{2}$ denotes a chi-square distribution with (n-1) degrees
+of freedom. Doing so and taking the square root, we obtain the 95%
+interval for $\sigma$ as (0.417, 0.61) for the samples where $y \leq 11$
+and (0.35, 0.532) for the samples where $y > 11$. We then pick any value
+that is present in both intervals, in our case, 0.45, and calculate
+$\psi_{1} = \frac{1}{{0.45}^{2}}$ . For $$, we initially set $d_{i} = 1$
+if $y_{i} > 11$ and $d_{i} = 0$ otherwise.
+
+Running the algorithm for 20000 iterations
+with $\mathrm{\Delta}_{a}$ and $\mathrm{\Delta}_{\gamma}$ at 0.25, we
+obtain the following trace plots.
+
+![res1](https://github.com/Gianatmaja/Actuarial-Statistical-Modelling-in-R/blob/main/Super-Discounts/Image/Screenshot%202022-10-09%20at%209.10.00%20PM.png)
+
+We observe that the chains have stabilized
+not far from their respective initial values. While it does seem that
+our chains have converged, we would like to confirm this further. So, we
+run the algorithm for a second time, but with the initial values of
+$p,\ \psi,\ \alpha,\ \gamma$ all set to 0.1. If our algorithm works
+correctly, then we would see the chains converge around the same values as before.
+
+![res2](https://github.com/Gianatmaja/Actuarial-Statistical-Modelling-in-R/blob/main/Super-Discounts/Image/Screenshot%202022-10-09%20at%209.10.11%20PM.png)
+
+All chains converged to similar values as in the first trial. Hence, we conclude that our algorithm indeed works. We further set the burn-in period to 5000 and apply thinning with m = 20. This is to ensure that our samples have converged and are independent. With the generated samples, we observe each parameter’s histogram and autocorrelation (to ensure independence of generated samples) below.
+
+![res3](https://github.com/Gianatmaja/Actuarial-Statistical-Modelling-in-R/blob/main/Super-Discounts/Image/Screenshot%202022-10-09%20at%209.10.28%20PM.png)
+
+![res4](https://github.com/Gianatmaja/Actuarial-Statistical-Modelling-in-R/blob/main/Super-Discounts/Image/Screenshot%202022-10-09%20at%209.10.45%20PM.png)
+
+### Conclusion
+
+We conclude that super discounts occur on around 45% of all days, and on average, brings in an extra $20 263. Without super discounts, daily sales have a mean of $99 844. With super discounts, they have a mean of $120 107. We estimate the standard deviation of the earnings 
+in both cases to be $4 799.
+
+
+
