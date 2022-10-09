@@ -160,8 +160,7 @@ that is present in both intervals, in our case, 0.45, and calculate
 $\psi_{1} = \frac{1}{{0.45}^{2}}$ . For $$, we initially set $d_{i} = 1$
 if $y_{i} > 11$ and $d_{i} = 0$ otherwise.
 
-Running the algorithm for 20000 iterations
-with $\mathrm{\Delta}_{a}$ and $\mathrm{\Delta}_{\gamma}$ at 0.25, we
+Running the algorithm for 20000 iterations with $\mathrm{\Delta}_{a}$ and $\mathrm{\Delta}_{\gamma}$ at 0.25, we
 obtain the following trace plots.
 
 ![res1](https://github.com/Gianatmaja/Actuarial-Statistical-Modelling-in-R/blob/main/Super-Discounts/Image/Screenshot%202022-10-09%20at%209.10.00%20PM.png)
