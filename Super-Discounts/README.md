@@ -151,6 +151,7 @@ $y > 11$. The 95% confidence interval is given by this formula:
 
 $95\%\ CI\ for\ \sigma^{2} = \left( \frac{(n - 1)s^{2}}{\chi_{n - 1,\ \ 1 - \frac{\alpha}{2}}^{2}}\ ,\ \frac{(n - 1)s^{2}}{\chi_{n - 1,\frac{\alpha}{2}}^{2}} \right)$
 
+
 where n denotes the sample size, $s^{2}$ the sample variance, and
 $\chi_{n - 1}^{2}$ denotes a chi-square distribution with (n-1) degrees
 of freedom. Doing so and taking the square root, we obtain the 95%
