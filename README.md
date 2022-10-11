@@ -1,4 +1,4 @@
-# Actuarial & Statistical Modelling in R
+# Statistical Modelling in R
 
 This repository contains several projects related to actuarial science & statistics, with codes in R.
 
