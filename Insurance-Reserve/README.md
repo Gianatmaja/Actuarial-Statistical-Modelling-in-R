@@ -33,7 +33,7 @@ $\propto \ \theta^{\alpha - 1}e^{- \left( \beta + \frac{\sum_{i = 1}^{n}x_{i}^{2
 
 Hence, (θ\|x) \~ Γ(α + n, $\beta + \frac{\sum_{i = 1}^{n}x_{i}^{2}}{2}$)
 
-![im1}(https://github.com/Gianatmaja/Statistical-Modelling-in-R/blob/main/Insurance-Reserve/images/Rplot01.png)
+![im1](https://github.com/Gianatmaja/Statistical-Modelling-in-R/blob/main/Insurance-Reserve/images/Rplot01.png)
 
 We can see that the posterior retains the form of a Gamma distribution.
 Putting our α, β, and data, we have π(θ\|x)\~Γ(4.001, 1.79725),
