@@ -6,7 +6,7 @@ we will perform a Bayesian analysis to predict the necessary capital the company
 this amount of reserve. We were told that the amount of the aggregated claim follows a given Rayleigh distribution with unknown parameter θ, and that the 
 previous 4 total annual claims were 1.1, 0.7, 0.45, and 1.3 million GBP.
 
-### Part One: Choosing a prior
+### Choosing a Prior
 
 We decided to use the Gamma distribution as our prior distribution for
 θ. The main reason is because it is a conjugate prior for the Rayleigh
@@ -20,7 +20,7 @@ In order to do this, we set both α and β of our prior distribution Γ(α,
 β) to be small. In our case, we set both values to be 0.001. We will
 then have a Gamma distribution with mean 1 and variance 1000.
 
-### Part Two: Deriving the posterior distribution
+### Deriving the Posterior Distribution
 
 Likelihood for Rayleigh Distribution:
 $\prod_{i = 1}^{n}{x_{i}\theta^{n}e^{- \frac{\theta}{2}\sum_{i = 1}^{n}x_{i}^{2}}}$
@@ -41,11 +41,11 @@ and variance compared to our prior distribution.
 
 ![im1](https://github.com/Gianatmaja/Statistical-Modelling-in-R/blob/main/Insurance-Reserve/images/Rplot01.png)
 
-### Part Three: Deriving the posterior predictive distribution
+### Deriving the Posterior Predictive Distribution
 We derive the posterior predictive distribution below.
 ![f1](https://github.com/Gianatmaja/Statistical-Modelling-in-R/blob/main/Insurance-Reserve/images/Screenshot%202022-10-12%20at%205.09.16%20PM.png)
 
-### Part Four: Generating samples of π(y\|θ)
+### Generating Samples of π(y\|θ)
 We can generate samples of the distribution by using inverse transform method.
 ![f2](https://github.com/Gianatmaja/Statistical-Modelling-in-R/blob/main/Insurance-Reserve/images/Screenshot%202022-10-12%20at%205.08.31%20PM.png)
 
@@ -60,7 +60,7 @@ Solving this, we have Y\~Γ(0.5271, 0.881).
 ![im2](https://github.com/Gianatmaja/Statistical-Modelling-in-R/blob/main/Insurance-Reserve/images/Rplot01.png)
 
 
-### Part Five: Selecting a minimum reserve
+### Selecting a Minimum Reserve
 
 To obtain the minimum required reserve, we  did 100 simulations where for each
 simulation, we took the lowest value of the highest 5% of the sample
