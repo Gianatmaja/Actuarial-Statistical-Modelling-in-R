@@ -54,7 +54,7 @@ Plotting the distribution in R, we saw that it is similar to a Gamma
 distribution. Denoting this hypothetical Gamma distribution by Γ(α',
 β'), We need to have $\frac{\alpha'}{\beta'} = 0.5983879$ and
 $\frac{\alpha'}{{\beta'}^{2}} = \frac{99\ 999}{10\ 000} \times 0.6792624$.
-Solving this, we have Y\~(0.5271, 0.881).
+Solving this, we have Y\~Γ(0.5271, 0.881).
 
 # Part Five: Selecting a minimum reserve
 
