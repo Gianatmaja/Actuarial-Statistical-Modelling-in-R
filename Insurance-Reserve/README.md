@@ -42,9 +42,11 @@ and variance compared to our prior distribution.
 ![im1](https://github.com/Gianatmaja/Statistical-Modelling-in-R/blob/main/Insurance-Reserve/images/Rplot01.png)
 
 ### Part Three: Deriving the posterior predictive distribution
+We derive the posterior predictive distribution below.
 ![f1](https://github.com/Gianatmaja/Statistical-Modelling-in-R/blob/main/Insurance-Reserve/images/Screenshot%202022-10-12%20at%205.09.16%20PM.png)
 
 ### Part Four: Generating samples of π(y\|θ)
+We can generate samples of the distribution by using inverse transform method.
 ![f2](https://github.com/Gianatmaja/Statistical-Modelling-in-R/blob/main/Insurance-Reserve/images/Screenshot%202022-10-12%20at%205.08.31%20PM.png)
 
 We generated 100 000 samples of Y in R and
