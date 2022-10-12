@@ -33,9 +33,35 @@ $\propto \ \theta^{\alpha - 1}e^{- \left( \beta + \frac{\sum_{i = 1}^{n}x_{i}^{2
 
 Hence, (θ\|x) \~ Γ(α + n, $\beta + \frac{\sum_{i = 1}^{n}x_{i}^{2}}{2}$)
 
+
+
 We can see that the posterior retains the form of a Gamma distribution.
 Putting our α, β, and data, we have π(θ\|x)\~Γ(4.001, 1.79725),
 resulting in a posterior mean of 2.226179 and a posterior variance of
 1.238658. Therefore, we have a posterior distribution with a higher mean
 and variance compared to our prior distribution.
 
+### Part Three: Deriving the posterior predictive distribution
+
+
+
+### Part Four: Generating samples of π(y\|θ)
+
+
+We generated 100 000 samples of Y in R and
+obtained a sample mean of 0.5983879 and a sample variance of 0.6792624.
+Plotting the distribution in R, we saw that it is similar to a Gamma
+distribution. Denoting this hypothetical Gamma distribution by Γ(α',
+β'), We need to have $\frac{\alpha'}{\beta'} = 0.5983879$ and
+$\frac{\alpha'}{{\beta'}^{2}} = \frac{99\ 999}{10\ 000} \times 0.6792624$.
+Solving this, we have Y\~(0.5271, 0.881).
+
+# Part Five: Selecting a minimum reserve
+
+To obtain the minimum required reserve, we  did 100 simulations where for each
+simulation, we took the lowest value of the highest 5% of the sample
+(where in our case is the 95001st data when sorted from lowest to
+highest). Then, we find the mean of them from our 100 simulations of it.
+In our case, we finally conclude that in order for the company to be at
+least 95% certain that it can cover its aggregated claims in the next 12
+months, it needs to hold a minimum of £2.001577 million in reserve.
