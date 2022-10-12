@@ -33,21 +33,19 @@ $\propto \ \theta^{\alpha - 1}e^{- \left( \beta + \frac{\sum_{i = 1}^{n}x_{i}^{2
 
 Hence, (θ\|x) \~ Γ(α + n, $\beta + \frac{\sum_{i = 1}^{n}x_{i}^{2}}{2}$)
 
-![im1](https://github.com/Gianatmaja/Statistical-Modelling-in-R/blob/main/Insurance-Reserve/images/Rplot01.png)
-
 We can see that the posterior retains the form of a Gamma distribution.
 Putting our α, β, and data, we have π(θ\|x)\~Γ(4.001, 1.79725),
 resulting in a posterior mean of 2.226179 and a posterior variance of
 1.238658. Therefore, we have a posterior distribution with a higher mean
 and variance compared to our prior distribution.
 
+![im1](https://github.com/Gianatmaja/Statistical-Modelling-in-R/blob/main/Insurance-Reserve/images/Rplot01.png)
+
 ### Part Three: Deriving the posterior predictive distribution
 ![f1](https://github.com/Gianatmaja/Statistical-Modelling-in-R/blob/main/Insurance-Reserve/images/Screenshot%202022-10-12%20at%205.09.16%20PM.png)
 
 ### Part Four: Generating samples of π(y\|θ)
 ![f2](https://github.com/Gianatmaja/Statistical-Modelling-in-R/blob/main/Insurance-Reserve/images/Screenshot%202022-10-12%20at%205.08.31%20PM.png)
-
-![im2](https://github.com/Gianatmaja/Statistical-Modelling-in-R/blob/main/Insurance-Reserve/images/Rplot01.png)
 
 We generated 100 000 samples of Y in R and
 obtained a sample mean of 0.5983879 and a sample variance of 0.6792624.
@@ -56,6 +54,9 @@ distribution. Denoting this hypothetical Gamma distribution by Γ(α',
 β'), We need to have $\frac{\alpha'}{\beta'} = 0.5983879$ and
 $\frac{\alpha'}{{\beta'}^{2}} = \frac{99\ 999}{10\ 000} \times 0.6792624$.
 Solving this, we have Y\~Γ(0.5271, 0.881).
+
+![im2](https://github.com/Gianatmaja/Statistical-Modelling-in-R/blob/main/Insurance-Reserve/images/Rplot01.png)
+
 
 ### Part Five: Selecting a minimum reserve
 
