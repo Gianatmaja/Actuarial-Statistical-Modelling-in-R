@@ -42,10 +42,10 @@ resulting in a posterior mean of 2.226179 and a posterior variance of
 and variance compared to our prior distribution.
 
 ### Part Three: Deriving the posterior predictive distribution
-![f1](https://github.com/Gianatmaja/Statistical-Modelling-in-R/blob/main/Insurance-Reserve/images/Screenshot%202022-10-12%20at%204.39.51%20PM.png)
+![f1](https://github.com/Gianatmaja/Statistical-Modelling-in-R/blob/main/Insurance-Reserve/images/Screenshot%202022-10-12%20at%205.09.16%20PM.png)
 
 ### Part Four: Generating samples of π(y\|θ)
-![f2](https://github.com/Gianatmaja/Statistical-Modelling-in-R/blob/main/Insurance-Reserve/images/Screenshot%202022-10-12%20at%204.40.10%20PM.png)
+![f2](https://github.com/Gianatmaja/Statistical-Modelling-in-R/blob/main/Insurance-Reserve/images/Screenshot%202022-10-12%20at%205.08.31%20PM.png)
 
 ![im2](https://github.com/Gianatmaja/Statistical-Modelling-in-R/blob/main/Insurance-Reserve/images/Rplot01.png)
 
